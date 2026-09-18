@@ -14,7 +14,7 @@
     <div class="app-shell">
       <aside class="sidebar">
         <a class="brand" href="#top" aria-label="Bidroom home"><span class="brand-mark">B</span><span>bidroom</span></a>
-        <div class="workspace-switcher"><span class="workspace-avatar">AC</span><span><small>Workspace</small><strong>Arc &amp; Co.</strong></span><span class="chevron">⌄</span></div>
+        <button class="workspace-switcher" id="workspaceButton" type="button"><span class="workspace-avatar">AC</span><span><small>Workspace</small><strong>Arc &amp; Co.</strong></span><span class="chevron">⌄</span></button>
         <nav class="primary-nav" aria-label="Primary navigation">
           <a class="nav-item active" href="#top"><span class="nav-icon">▦</span> Overview</a>
           <a class="nav-item" href="#tenders"><span class="nav-icon">◫</span> All tenders <b id="navTenderCount">6</b></a>
@@ -23,14 +23,14 @@
         </nav>
         <div class="sidebar-label">Workspace</div>
         <nav class="secondary-nav" aria-label="Workspace navigation">
-          <a class="nav-item" href="#team"><span class="nav-icon">♙</span> Team</a>
-          <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span> Settings</a>
+          <a class="nav-item" id="teamLink" href="#team"><span class="nav-icon">♙</span> Team</a>
+          <a class="nav-item" id="settingsLink" href="#settings"><span class="nav-icon">⚙</span> Settings</a>
         </nav>
-        <div class="sidebar-bottom"><div class="sidebar-tip"><span class="spark">✦</span><div><strong>Need a hand?</strong><p>Ask Bidroom AI about any tender.</p></div></div><button class="user-chip" id="accountButton"><span class="user-avatar">JD</span><span><strong id="userName">Jordan Davis</strong><small id="userRole">Bid manager</small></span><span class="more">•••</span></button></div>
+        <div class="sidebar-bottom"><button class="sidebar-tip" id="aiTipButton" type="button"><span class="spark">✦</span><span><strong>Need a hand?</strong><p>Ask Bidroom AI about any tender.</p></span></button><button class="user-chip" id="accountButton"><span class="user-avatar">JD</span><span><strong id="userName">Jordan Davis</strong><small id="userRole">Bid manager</small></span><span class="more">•••</span></button></div>
       </aside>
 
       <main class="main-content" id="top">
-        <header class="topbar"><div class="breadcrumbs"><span>Workspace</span><span>/</span><strong>Overview</strong></div><div class="top-actions"><button class="icon-button" aria-label="Search" title="Search">⌕</button><button class="icon-button notification-button" aria-label="Notifications" title="Notifications">♧<i></i></button><button class="avatar-button" id="headerAccountButton">JD</button></div></header>
+        <header class="topbar"><div class="breadcrumbs"><span>Workspace</span><span>/</span><strong>Overview</strong></div><div class="top-actions"><button class="icon-button" id="searchButton" aria-label="Search" title="Search">⌕</button><button class="icon-button notification-button" id="notificationButton" aria-label="Notifications" title="Notifications">♧<i></i></button><button class="avatar-button" id="headerAccountButton">JD</button></div></header>
         <section class="page-heading"><div><p class="eyebrow">Friday, 18 September 2026</p><h1>Good morning, Jordan <span>✦</span></h1><p class="heading-copy">Keep your bids moving. You have <strong id="openTenderText">4 active tenders</strong> and one deadline this week.</p></div><button class="primary-button" id="newTenderButton"><span>＋</span> New tender</button></section>
 
         <section class="metrics-grid" aria-label="Tender summary"><article class="metric-card"><div class="metric-icon green">◫</div><div><span>Active tenders</span><strong id="activeMetric">4</strong><small><em>+2</em> from last month</small></div></article><article class="metric-card"><div class="metric-icon amber">◷</div><div><span>Due this month</span><strong>3</strong><small>Next one in <em>4 days</em></small></div></article><article class="metric-card"><div class="metric-icon blue">▤</div><div><span>Documents ready</span><strong id="documentsMetric">18</strong><small><em>86%</em> completion rate</small></div></article><article class="metric-card"><div class="metric-icon coral">♧</div><div><span>Won this quarter</span><strong>€128k</strong><small><em>+24%</em> vs last quarter</small></div></article></section>
