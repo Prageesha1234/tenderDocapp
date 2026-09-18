@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <title>Bidroom | Tender workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#top" aria-label="Bidroom home"><span class="brand-mark">B</span><span>bidroom</span></a>
+        <div class="workspace-switcher"><span class="workspace-avatar">AC</span><span><small>Workspace</small><strong>Arc &amp; Co.</strong></span><span class="chevron">⌄</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a class="nav-item active" href="#top"><span class="nav-icon">▦</span> Overview</a>
+          <a class="nav-item" href="#tenders"><span class="nav-icon">◫</span> All tenders <b id="navTenderCount">6</b></a>
+          <a class="nav-item" href="#calendar"><span class="nav-icon">□</span> Calendar</a>
+          <a class="nav-item" href="#documents"><span class="nav-icon">▤</span> Documents</a>
+        </nav>
+        <div class="sidebar-label">Workspace</div>
+        <nav class="secondary-nav" aria-label="Workspace navigation">
+          <a class="nav-item" href="#team"><span class="nav-icon">♙</span> Team</a>
+          <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span> Settings</a>
+        </nav>
+        <div class="sidebar-bottom"><div class="sidebar-tip"><span class="spark">✦</span><div><strong>Need a hand?</strong><p>Ask Bidroom AI about any tender.</p></div></div><button class="user-chip" id="accountButton"><span class="user-avatar">JD</span><span><strong id="userName">Jordan Davis</strong><small id="userRole">Bid manager</small></span><span class="more">•••</span></button></div>
+      </aside>
+
+      <main class="main-content" id="top">
+        <header class="topbar"><div class="breadcrumbs"><span>Workspace</span><span>/</span><strong>Overview</strong></div><div class="top-actions"><button class="icon-button" aria-label="Search" title="Search">⌕</button><button class="icon-button notification-button" aria-label="Notifications" title="Notifications">♧<i></i></button><button class="avatar-button" id="headerAccountButton">JD</button></div></header>
+        <section class="page-heading"><div><p class="eyebrow">Friday, 18 September 2026</p><h1>Good morning, Jordan <span>✦</span></h1><p class="heading-copy">Keep your bids moving. You have <strong id="openTenderText">4 active tenders</strong> and one deadline this week.</p></div><button class="primary-button" id="newTenderButton"><span>＋</span> New tender</button></section>
+
+        <section class="metrics-grid" aria-label="Tender summary"><article class="metric-card"><div class="metric-icon green">◫</div><div><span>Active tenders</span><strong id="activeMetric">4</strong><small><em>+2</em> from last month</small></div></article><article class="metric-card"><div class="metric-icon amber">◷</div><div><span>Due this month</span><strong>3</strong><small>Next one in <em>4 days</em></small></div></article><article class="metric-card"><div class="metric-icon blue">▤</div><div><span>Documents ready</span><strong id="documentsMetric">18</strong><small><em>86%</em> completion rate</small></div></article><article class="metric-card"><div class="metric-icon coral">♧</div><div><span>Won this quarter</span><strong>€128k</strong><small><em>+24%</em> vs last quarter</small></div></article></section>
+
+        <div class="content-grid">
+          <section class="tenders-section" id="tenders"><div class="section-heading"><div><h2>Your tenders</h2><p>Everything currently on your bid desk.</p></div><div class="section-tools"><button class="filter-button" id="filterButton">All status <span>⌄</span></button><button class="text-button" id="viewAllButton">View all <span>→</span></button></div></div><div class="tender-table-wrap"><table class="tender-table"><thead><tr><th>Tender / client</th><th>Stage</th><th>Submission</th><th>Progress</th><th></th></tr></thead><tbody id="tenderRows"></tbody></table><div class="empty-state" id="emptyState" hidden><div class="empty-icon">◫</div><h3>No tenders here yet</h3><p>Create your first tender to start tracking a bid.</p><button class="primary-button" id="emptyNewButton">New tender</button></div></div></section>
+          <aside class="right-rail">
+            <section class="rail-card deadlines" id="calendar"><div class="rail-heading"><div><h2>Coming up</h2><p>Your next key dates</p></div><button class="round-button" id="calendarButton" aria-label="Open calendar">＋</button></div><div class="deadline-list" id="deadlineList"></div><button class="outline-button full-width" id="calendarViewButton">View calendar <span>→</span></button></section>
+            <section class="rail-card ai-card" id="documents"><div class="ai-orbit">✦</div><div><span class="ai-label">BIDROOM AI</span><h2>Make your next bid sharper.</h2><p>Turn a tender document into a clear action plan in seconds.</p></div><button class="ai-button" id="aiButton">Ask AI <span>→</span></button></section>
+          </aside>
+        </div>
+        <section class="activity-section"><div class="section-heading"><div><h2>Recent activity</h2><p>A quiet log of what has changed.</p></div><button class="text-button" id="activityButton">See all <span>→</span></button></div><div class="activity-list"><div class="activity-item"><span class="activity-avatar blue-bg">MC</span><p><strong>Maria Chen</strong> uploaded <b>technical-response.docx</b> to <b>Northstar Community Hub</b><small>Today, 09:42</small></p></div><div class="activity-item"><span class="activity-avatar green-bg">JD</span><p><strong>You</strong> moved <b>Riverside Civic Centre</b> to <b>Ready to submit</b><small>Yesterday, 16:18</small></p></div><div class="activity-item"><span class="activity-avatar amber-bg">SK</span><p><strong>Sam Kline</strong> commented on <b>Westfield Library Extension</b><small>Yesterday, 11:05</small></p></div></div></section>
+        <footer><span>Bidroom workspace</span><span>Last synced just now</span></footer>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></div></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
